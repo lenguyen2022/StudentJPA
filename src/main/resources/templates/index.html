@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Index</title>
+</head>
+<body>
+		<table th:if="${studentList != null && studentList != ''}">
+			<tr th:each="s : ${studentList}">
+				<td th:text="${s.name}">Frank</td>
+			</tr>
+		</table>
+</body>
+</html>

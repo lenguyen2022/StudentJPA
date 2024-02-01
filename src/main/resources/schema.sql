@@ -1,0 +1,20 @@
+CREATE TABLE STUDENT
+(
+    id   LONG PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255)
+);
+
+CREATE TABLE ADDRESS
+(
+    id   LONG PRIMARY KEY AUTO_INCREMENT,
+    address VARCHAR(255)
+);
+
+CREATE TABLE STUDENTADDRESS
+(
+    studentId   LONG,
+    addressId LONG,
+    PRIMARY KEY(studentId, addressId),
+    FOREIGN KEY(studentId) REFERENCES STUDENT(id),
+    FOREIGN KEY(addressId) REFERENCES ADDRESS(id)
+);

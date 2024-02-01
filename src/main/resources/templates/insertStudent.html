@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Insert Student</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Student Name</th>
+    </tr>
+    <table th:if="${studentList != null && studentList != ''}">
+        <tr th:each="s : ${studentList}">
+            <td th:text="${s.name}">Frank</td>
+            <td><a th:href="|@{/editStudentById/}${s.id}|">Edit</a></td>
+            <td><a th:href="|@{/deleteStudentById/}${s.id}|">Delete</a></td>
+        </tr>
+    </table>
+</table>
+<form method="post" action="#" th:action="@{/addStudent}"
+      th:object="${student}">
+       <input type="number" th:field="*{id}" hidden /><br>
+    Name: <input type="text" th:field="*{name}" /><br>
+</select>	<br>
+    <input type="submit" value="Add A Student!" />
+</form>
+</body>
+</html>
